@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info: 
+  description: Caju API
+  version: 1.0.0
+  title: Caju Api
+paths:
+  /transaction/authorize:
+    post:
+      tags: 
+        - Transaction
+      summary: Authorize Transaction
+      operationId: transactionAuthorize
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthorizeTransactionRequest'
+      responses: 
+        "200": 
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthorizeTransactionResponse'
+components:
+  schemas:
+    AuthorizeTransactionRequest:
+      title: AuthorizeTransactionRequest
+      description: Description
+      type: object
+      properties:
+        account:
+          type: string
+        totalAmount:
+          type: number
+        mcc:
+          type: string
+        merchant:
+          type: string
+    AuthorizeTransactionResponse:
+      title: AuthorizeTransactionResponse
+      description: Description
+      type: object
+      properties: 
+        code:
+          type: string

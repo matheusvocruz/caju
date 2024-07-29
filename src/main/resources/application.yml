@@ -1,0 +1,13 @@
+micronaut:
+  application:
+    name: caju
+  server:
+    port: 8080
+    context-path: /caju/api/
+  security:
+    enabled: false
+
+mongodb:
+  uri: mongodb://localhost:27017/caju
+  package-names:
+    model
